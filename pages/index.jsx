@@ -1,4 +1,6 @@
 "use client";
+import CertificateGallery from "@/components/CertificateGalery";
+import InstallationGallery from "@/components/InstalationGallery";
 import About from "@/components/layout/About";
 import Contact from "@/components/layout/Contact";
 import Footer from "@/components/layout/Footer";
@@ -15,6 +17,8 @@ export default function Home() {
       <Hero />
       <About />
       <VisiMisi />
+      <CertificateGallery />
+      <InstallationGallery />
       <Partner />
       {/* <Services /> */}
       <Contact />
