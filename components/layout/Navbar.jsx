@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-export const Navigation = () => {
+export const Navigation = ({ isTop }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
@@ -12,30 +12,40 @@ export const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white shadow z-50">
-      <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <a href="#page-top" className="text-xl font-bold text-blue-600">
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300 ${isTop ? "bg-transparent text-white" : "bg-white text-black shadow-md"
+        }`}
+    >
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="#page-top" className="text-2xl font-bold tracking-wide text-blue-500">
           PT. Global Mandiri Primatech
         </a>
 
+        {/* Burger icon */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden focus:outline-none"
+          className="md:hidden focus:outline-none cursor-pointer"
           aria-label="Toggle menu"
         >
-          <div className="space-y-1">
-            <span className="block w-6 h-0.5 bg-gray-800"></span>
-            <span className="block w-6 h-0.5 bg-gray-800"></span>
-            <span className="block w-6 h-0.5 bg-gray-800"></span>
+          <div className="flex flex-col gap-[5px]">
+            {[...Array(3)].map((_, i) => (
+              <span
+                key={i}
+                className={`block h-[2px] w-6 rounded-sm transition-all duration-500 ${isTop ? "bg-white" : "bg-gray-800"
+                  }`}
+              ></span>
+            ))}
           </div>
         </button>
 
-        <ul className="hidden md:flex space-x-6 items-center">
+        {/* Desktop nav */}
+        <ul className="hidden md:flex items-center space-x-8 font-medium text-base">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-gray-700 hover:text-blue-600 transition"
+                className={`transition duration-300 ${isTop ? "text-white hover:text-blue-300" : "text-gray-700 hover:text-blue-600"
+                  }`}
               >
                 {link.label}
               </a>
@@ -45,23 +55,24 @@ export const Navigation = () => {
       </div>
 
       {/* Mobile menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white border-t">
-          <ul className="flex flex-col space-y-4 px-6 py-4">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="block text-gray-700 hover:text-blue-600 transition"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      <div
+        className={`md:hidden transition-all duration-800 overflow-hidden ${isOpen ? "max-h-[500px]" : "max-h-0"
+          } bg-white`}
+      >
+        <ul className="flex flex-col px-6 py-4 space-y-4 font-medium text-gray-800">
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                onClick={() => setIsOpen(false)}
+                className="block hover:text-blue-600 transition duration-200"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 };
