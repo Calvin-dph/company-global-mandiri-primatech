@@ -2,7 +2,14 @@
 import { motion } from "framer-motion";
 
 const InstallationGallery = () => {
-  const installations = [1, 2, 3, 4, 5, 6];
+  const installationsA = Array.from(
+    { length: 12 },
+    (_, i) => `/instalasi/${i + 1}.jpeg`
+  );
+  const installationsB = Array.from(
+    { length: 12 },
+    (_, i) => `/instalasi/${i + 13}.jpeg`
+  );
 
   return (
     <section className="py-16 px-4 bg-gray-50" id="installations">
@@ -26,7 +33,7 @@ const InstallationGallery = () => {
                 },
               }}
             >
-              {installations.map((img) => (
+              {installationsA.map((img) => (
                 <motion.div
                   key={img}
                   className="flex-none w-1/3"
@@ -34,7 +41,7 @@ const InstallationGallery = () => {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <img
-                    src={`https://placehold.co/400x300?text=Instalasi+${img}`}
+                    src={img}
                     alt={`Instalasi ${img}`}
                     className="w-full max-h-[35vh] object-cover rounded-lg shadow-md"
                   />
@@ -57,7 +64,7 @@ const InstallationGallery = () => {
                 },
               }}
             >
-              {installations.map((img) => (
+              {installationsB.map((img) => (
                 <motion.div
                   key={img}
                   className="flex-none w-1/3"
@@ -65,7 +72,7 @@ const InstallationGallery = () => {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <img
-                    src={`https://placehold.co/400x300?text=Instalasi+${img}`}
+                    src={img}
                     alt={`Instalasi ${img}`}
                     className="w-full max-h-[35vh] object-cover rounded-lg shadow-md"
                   />
