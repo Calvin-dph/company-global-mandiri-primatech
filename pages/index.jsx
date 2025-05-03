@@ -2,6 +2,7 @@
 import CertificateGallery from "@/components/CertificateGalery";
 import InstallationGallery from "@/components/InstalationGallery";
 import About from "@/components/layout/About";
+import Contact from "@/components/layout/Contact";
 import Footer from "@/components/layout/Footer";
 import Hero from "@/components/layout/Hero";
 import VisiMisi from "@/components/layout/Mission";
@@ -30,6 +31,7 @@ export default function Home() {
       <CertificateGallery />
       <InstallationGallery />
       <Partner />
+      <Contact />
       {/* <Services /> */}
       <Footer />
     </div>

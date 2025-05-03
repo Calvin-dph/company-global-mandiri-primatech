@@ -16,10 +16,8 @@ function Footer() {
 
   useEffect(() => {
     const width = window.innerWidth;
-
-    console.log(width);
     if (width > 1024) {
-      setXRange([100, 400]);
+      setXRange([350, 400]);
     } else {
       setXRange([0, 0]);
     }

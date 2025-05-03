@@ -13,15 +13,14 @@ export const Navigation = ({ isTop }) => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isTop ? "bg-transparent text-white" : "bg-white text-black shadow-md"
-      }`}
+      className={`fixed w-full z-50 transition-all duration-300 ${isTop ? "bg-transparent text-white" : "bg-white text-black shadow-md"
+        }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
         <img
-          src="/logo.png"
+          src="/Logo.png"
           alt="Logo"
-          className="h-24 w-auto object-contain transition-opacity duration-300 hover:opacity-80"
+          className="h-18 w-auto object-contain transition-opacity duration-300 hover:opacity-80"
         />
 
         {/* Burger icon */}
@@ -34,9 +33,8 @@ export const Navigation = ({ isTop }) => {
             {[...Array(3)].map((_, i) => (
               <span
                 key={i}
-                className={`block h-[2px] w-6 rounded-sm transition-all duration-500 ${
-                  isTop ? "bg-white" : "bg-gray-800"
-                }`}
+                className={`block h-[2px] w-6 rounded-sm transition-all duration-500 ${isTop ? "bg-white" : "bg-gray-800"
+                  }`}
               ></span>
             ))}
           </div>
@@ -48,11 +46,10 @@ export const Navigation = ({ isTop }) => {
             <li key={link.href}>
               <a
                 href={link.href}
-                className={`transition duration-300 ${
-                  isTop
-                    ? "text-white hover:text-blue-300"
-                    : "text-gray-700 hover:text-blue-600"
-                }`}
+                className={`transition duration-300 ${isTop
+                  ? "text-white hover:text-blue-300"
+                  : "text-gray-700 hover:text-blue-600"
+                  }`}
               >
                 {link.label}
               </a>
@@ -63,9 +60,8 @@ export const Navigation = ({ isTop }) => {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden transition-all duration-800 overflow-hidden ${
-          isOpen ? "max-h-[500px]" : "max-h-0"
-        } bg-white`}
+        className={`md:hidden transition-all duration-800 overflow-hidden ${isOpen ? "max-h-[500px]" : "max-h-0"
+          } bg-white`}
       >
         <ul className="flex flex-col px-6 py-4 space-y-4 font-medium text-gray-800">
           {navLinks.map((link) => (
