@@ -9,7 +9,13 @@ const VisiMisi = () => {
   const isInViewMisi = useInView(refMisi, { once: true });
 
   return (
-    <section id="visi-misi" className="py-16 px-4 bg-gray-50">
+    <section
+      id="visi-misi"
+      className="py-16 px-4 bg-gray-50 bg-cover bg-center bg-fit"
+      style={{
+        backgroundImage: "url('/background/world.jpg')",
+      }}
+    >
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl font-bold mb-8 text-gray-800">Visi & Misi</h2>
 
@@ -41,7 +47,7 @@ const VisiMisi = () => {
             className="md:w-1/2 p-6"
           >
             <img
-              src="https://placehold.co/600x400"
+              src="/visi.jpg"
               alt="Visi Image"
               className="w-full h-auto object-cover rounded-lg shadow-lg transition-transform duration-300"
             />
@@ -59,7 +65,7 @@ const VisiMisi = () => {
             className="md:w-1/2 p-6"
           >
             <img
-              src="https://placehold.co/600x400"
+              src="/misi.jpg"
               alt="Misi Image"
               className="w-full h-auto object-cover rounded-lg shadow-lg"
             />

@@ -8,7 +8,9 @@ import Hero from "@/components/layout/Hero";
 import VisiMisi from "@/components/layout/Mission";
 import { Navigation } from "@/components/layout/Navbar";
 import Partner from "@/components/layout/Partner";
+import Products from "@/components/layout/Products";
 import { useEffect, useState } from "react";
+import Experience from "@/components/layout/Experience";
 
 export default function Home() {
   const [isTop, setIsTop] = useState(true);
@@ -18,8 +20,8 @@ export default function Home() {
       setIsTop(window.scrollY < 200);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -28,11 +30,12 @@ export default function Home() {
       <Hero />
       <About />
       <VisiMisi />
-      <CertificateGallery />
       <InstallationGallery />
+      <CertificateGallery />
+      <Products />
+      <Experience />
       <Partner />
       <Contact />
-      {/* <Services /> */}
       <Footer />
     </div>
   );
