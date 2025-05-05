@@ -11,6 +11,7 @@ import Partner from "@/components/layout/Partner";
 import Products from "@/components/layout/Products";
 import { useEffect, useState } from "react";
 import Experience from "@/components/layout/Experience";
+import BackToTop from "@/components/BacktoTop";
 
 export default function Home() {
   const [isTop, setIsTop] = useState(true);
@@ -37,6 +38,7 @@ export default function Home() {
       <Partner />
       <Contact />
       <Footer />
+      <BackToTop />
     </div>
   );
 }

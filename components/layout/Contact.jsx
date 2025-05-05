@@ -16,7 +16,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact-section" className="py-20 px-6 mx-auto space-y-10">
+    <section id="contact" className="py-20 px-6 mx-auto space-y-10">
       <h1 className="text-3xl font-bold text-gray-800 mb-4 text-center">
         Hubungi Kami
       </h1>
@@ -28,8 +28,7 @@ export default function Contact() {
             <div className="flex items-start gap-3 justify-between h-fit">
               <div className="text-white text-xs w-[80%]">
                 <h1 className="font-bold text-sm tracking-wider">LOKASI</h1>
-                Komplek Perkantoran Premier Park 2 Blok. A No. 02, Cikokol Kota
-                Tangerang
+                RUKO PREMIER PARK 2 BLOK C NO. 8, RT.009/RW.003, Cikokol, Kec. Tangerang, Kota Tangerang, Banten
               </div>
               <MapPin size={20} className="text-white mt-1" />
             </div>

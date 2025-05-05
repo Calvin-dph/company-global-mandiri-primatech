@@ -24,21 +24,29 @@ export default function Products() {
     {
       id: 4,
       name: "Hydrant System",
-      image: "/products/suppresion.png",
+      image: "/products/suppresion.jpeg",
       description:
         "Hydrant adalah sistem salah satu pemadam kebakaran yang terhubung dengan sumber air yang bertekanan dan mendistribusikan air ke lokasi pemadaman dengan laju yang cukup. Alat ini bermanfaat untuk pemadaman api tanpa membuat penggunanya khawatir terjadinya kekurangan pasokan air.",
+    },
+    {
+      id: 5,
+      name: "Access Control",
+      image: "/products/access-control.jpeg",
+      description:
+        "Hydrant adalah sistem salah satu pemadam kebakaran yang terhubung dengan sumber air yang bertekanan dan mendistribusikan air ke lokasi pemadaman dengan laju yang cukup. Alat ini bermanfaat untuk pemadaman api tanpa membuat penggunanya khawatir terjadinya kekurangan pasokan air.",
+      detail_image: "/products/detail-access-control.jpeg"
     },
   ];
 
   return (
-    <div className="bg-gray-100 py-10 px-6 ">
+    <div id="product" className="bg-gray-50 py-10 px-6 ">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold text-gray-800 mb-2">Produk Kami</h1>
         <p className="text-gray-600 mb-8 max-w-2xl">
           Konsultasikan kebutuhan keamanan terhadap risiko kebakaran kepada kami
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
           {products.map((product) => (
             <div key={product.id} className="perspective">
               <div className="text-center mb-2 text-lg font-semibold text-gray-800">
@@ -51,7 +59,7 @@ export default function Products() {
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="max-w-full h-48 object-contain"
+                      className="max-w-full h-60 object-contain"
                     />
                   </div>
                   <div className="bg-orange-500 text-white text-center py-2 px-3 text-sm font-semibold">
@@ -65,6 +73,12 @@ export default function Products() {
                     Deskripsi
                   </h3>
                   <div className="flex-1 overflow-auto text-sm text-gray-700 leading-relaxed text-justify scrollbar-thin scrollbar-thumb-orange-300 scrollbar-track-orange-100 pr-2">
+                    {product.detail_image &&
+                      <img
+                        src={product.detail_image}
+                        alt={product.name}
+                        className="max-w-full h-60 "
+                      />}
                     {product.description}
                   </div>
                   <button className="cursor-pointer mt-4 px-4 py-2 text-sm font-medium bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition">
@@ -72,7 +86,6 @@ export default function Products() {
                   </button>
                 </div>
 
-                {/*  */}
               </div>
             </div>
           ))}

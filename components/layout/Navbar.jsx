@@ -46,7 +46,17 @@ export const Navigation = ({ isTop }) => {
             <li key={link.href}>
               <a
                 href={link.href}
-                className={`transition duration-300 ${isTop
+                onClick={(e) => {
+                  e.preventDefault();
+                  const target = document.querySelector(link.href);
+                  if (target) {
+                    const yOffset = -window.innerHeight * 0.1;
+                    const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: "smooth" });
+                  }
+                  setIsOpen(false);
+                }}
+                className={`block transition duration-300 ${isTop
                   ? "text-white hover:text-blue-300"
                   : "text-gray-700 hover:text-blue-600"
                   }`}
@@ -55,6 +65,7 @@ export const Navigation = ({ isTop }) => {
               </a>
             </li>
           ))}
+
         </ul>
       </div>
 
