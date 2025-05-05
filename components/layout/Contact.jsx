@@ -4,15 +4,15 @@ import { Mail, Phone, MapPin, Timer, MessageCircle } from "lucide-react";
 
 export default function Contact() {
   const whatsappContacts = [
-    { name: "Admin 1", number: "6281234567890" },
-    { name: "Admin 2", number: "6289876543210" },
-    { name: "Admin 3", number: "6281122334455" },
+    { name: "Admin 1", number: "6281212901125" },
+    { name: "Admin 2", number: "6287876871903" },
+    { name: "Admin 3", number: "6281314241189" },
   ];
 
   const emailContacts = [
-    { name: "Support", email: "support@example.com" },
-    { name: "Sales", email: "sales@example.com" },
-    { name: "General", email: "info@example.com" },
+    { name: "Support", email: "edisutarko1725@gmail.com" },
+    { name: "Sales", email: "sales@firetech.id" },
+    { name: "General", email: "edi@firetech.id" },
   ];
 
   return (
@@ -28,7 +28,8 @@ export default function Contact() {
             <div className="flex items-start gap-3 justify-between h-fit">
               <div className="text-white text-xs w-[80%]">
                 <h1 className="font-bold text-sm tracking-wider">LOKASI</h1>
-                RUKO PREMIER PARK 2 BLOK C NO. 8, RT.009/RW.003, Cikokol, Kec. Tangerang, Kota Tangerang, Banten
+                RUKO PREMIER PARK 2 BLOK C NO. 8, RT.009/RW.003, Cikokol, Kec.
+                Tangerang, Kota Tangerang, Banten
               </div>
               <MapPin size={20} className="text-white mt-1" />
             </div>

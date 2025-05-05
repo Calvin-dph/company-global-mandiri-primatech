@@ -34,7 +34,7 @@ export default function Products() {
       image: "/products/access-control.jpeg",
       description:
         "Hydrant adalah sistem salah satu pemadam kebakaran yang terhubung dengan sumber air yang bertekanan dan mendistribusikan air ke lokasi pemadaman dengan laju yang cukup. Alat ini bermanfaat untuk pemadaman api tanpa membuat penggunanya khawatir terjadinya kekurangan pasokan air.",
-      detail_image: "/products/detail-access-control.jpeg"
+      detail_image: "/products/detail-access-control.jpeg",
     },
   ];
 
@@ -52,7 +52,7 @@ export default function Products() {
               <div className="text-center mb-2 text-lg font-semibold text-gray-800">
                 {product.name}
               </div>
-              <div className="relative w-full h-72 transition-transform duration-500 transform-style-preserve-3d hover:rotate-y-180">
+              <div className="relative w-full h-72 transition-transform duration-500 transform-style-preserve-3d hover:rotate-y-180 hover:scale-105">
                 {/* Front side */}
                 <div className="absolute w-full h-full backface-hidden bg-white rounded-2xl shadow-lg overflow-hidden flex flex-col">
                   <div className="flex-1 flex items-center justify-center bg-white p-2">
@@ -73,19 +73,16 @@ export default function Products() {
                     Deskripsi
                   </h3>
                   <div className="flex-1 overflow-auto text-sm text-gray-700 leading-relaxed text-justify scrollbar-thin scrollbar-thumb-orange-300 scrollbar-track-orange-100 pr-2">
-                    {product.detail_image &&
+                    {product.detail_image && (
                       <img
                         src={product.detail_image}
                         alt={product.name}
                         className="max-w-full h-60 "
-                      />}
+                      />
+                    )}
                     {product.description}
                   </div>
-                  <button className="cursor-pointer mt-4 px-4 py-2 text-sm font-medium bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition">
-                    Selengkapnya
-                  </button>
                 </div>
-
               </div>
             </div>
           ))}
@@ -105,6 +102,9 @@ export default function Products() {
         }
         .rotate-y-180:hover {
           transform: rotateY(180deg);
+        }
+        .relative {
+          will-change: transform;
         }
       `}</style>
     </div>
